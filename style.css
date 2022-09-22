@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-heading: 'Staatliches', sans-serif;
+    --ff-texting: 'Palanquin', sans-serif;
+
+    --body-bg: hsl(233, 100%, 97%, 1);
+    --header-bg: hsl(218, 17%, 62%, 1);
+    --logo-bg: hsl(275, 18%, 79%, 1);
+    --card-bg: hsl(312, 91%, 96%, 1);
+
+    --fc-texting: hsl(274, 84%, 12%, 1);
+    --fc-heading: hsl(232, 17%, 35%, 1);
+
+    font-size: 62.5%;   /* 10px */
+    --fs-body: 1.6rem;
+    --fs-heading: clamp(4rem, 1rem + 5vw, 5.6rem);
+    --fs-heading-sm: clamp(3rem, 0.5rem + 4.5vw, 4rem);
+}
+
+body {
+    font-family: var(--ff-texting);
+    
+    color: var(--fc-texting);
+
+    font-size: var(--fs-body);
+}
+
+.page {
+    /* max-width: clamp(32rem, 30rem + 60vw, 120rem); */
+    background: var(--body-bg);
+    width: 38.4rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header {
+    height: 27.9rem;
+    margin-bottom: 1.4rem;
+    background: var(--header-bg);
+    position: relative;
+}
+
+header img {
+    height: 13.7rem;
+    margin: 3.2rem 0;
+
+    animation: image-scale 3s ease-out both;
+}
+
+header h1 {
+    font-family: var(--ff-heading);
+    font-weight: 400;
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    width: 38.4rem;
+    height: 4.9rem;
+    background: var(--logo-bg);
+    padding: 8px 8.6rem;
+    margin-bottom: 2.9rem;
+
+    position: absolute;
+
+    top: 201px;
+}
+
+main {
+    display: grid;
+    gap: 3.2rem;
+
+    padding: 0 3.2rem 6rem;
+}
+
+main p {
+    margin-bottom: 3rem;
+    
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    position: relative;
+
+    font-family: var(--ff-heading);
+}
+
+.card img {
+    height: 25rem;
+    object-fit: cover;
+
+    border-radius: 2rem;
+    transition: all 200ms;
+    animation: slide-top 700ms 200ms reverse backwards;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.card h2 {
+    position: absolute;
+    top: 1.6rem;
+    left: 19.2rem;
+
+    display: inline-flex;
+    align-items: center;
+    width: 11.2rem;
+
+    height: 3.5rem;
+    padding: 0 2.4rem;
+    border-radius: 2rem;
+    background: var(--card-bg);
+
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3.4rem;
+    letter-spacing: 0.05rem;
+
+    color: var(--fc-heading);
+
+    animation: slide-bottom 700ms 200ms reverse backwards;
+}
+
+@keyframes image-scale {
+    0% {
+      transform: scale(1) translateY(0);
+      transform-origin: 50% 16%;
+    }
+    100% {
+      transform: scale(1.25) translateY(-15px);
+      transform-origin: top;
+    }
+  }
+  
+
+@keyframes slide-top {
+    100% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+}
+
+@keyframes slide-bottom {
+    100% {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    
+    /* 100% {
+        opacity: 1;
+        transform: translateY(0);
+    } */
+}
